@@ -3,13 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
-
-public enum UGUIType
-{
-    Image,
-    Text,
-    ETC // Ãß°¡ÇØ ³ª°¥°Í
-}
+ 
 public class UGUIAttribute: Attribute
 {
      
@@ -28,7 +22,7 @@ public class UGUIAttribute: Attribute
             if (attribute != null)
             {
                 var name = field.Name;
-                //ÀÌ¸§ÀÌ _·Î ½ÃÀÛÇÏ´Â °æ¿ì¸¸ Ã£À½ 
+                //ì´ë¦„ì´ _ë¡œ ì‹œì‘í•˜ëŠ” ê²½ìš°ë§Œ ì°¾ìŒ 
 
                 string path = null;
                 if (attribute.childObjectPath == null)
@@ -37,7 +31,7 @@ public class UGUIAttribute: Attribute
                 }
                 else
                 {
-                    //¸¶Áö¸·¿¡ /¸¦ ÀûÀº°æ¿ì Áö¿öÁÖ±â
+                    //ë§ˆì§€ë§‰ì— /ë¥¼ ì ì€ê²½ìš° ì§€ì›Œì£¼ê¸°
                     if(attribute.childObjectPath[attribute.childObjectPath.Length-1] == '/') 
                         attribute.childObjectPath = attribute.childObjectPath.Remove(attribute.childObjectPath.Length-1, 1); 
 
